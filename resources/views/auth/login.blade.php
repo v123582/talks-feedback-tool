@@ -25,15 +25,15 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">password</label>
+                        <div class="form-group{{ $errors->has('serialNumber') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">serialNumber</label>
 
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="password" ㄔ>
+                                <input type="text" class="form-control" name="serialNumber" ㄔ>
 
-                                @if ($errors->has('password'))
+                                @if ($errors->has('serialNumber'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                        <strong>{{ $errors->first('serialNumber') }}</strong>
                                     </span>
                                 @endif
                             </div>
