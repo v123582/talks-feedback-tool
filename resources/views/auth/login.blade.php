@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -24,15 +25,15 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('serialNumber') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">serialNumber</label>
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">password</label>
 
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="serialNumber">
+                                <input type="text" class="form-control" name="password" ㄔ>
 
-                                @if ($errors->has('serialNumber'))
+                                @if ($errors->has('password'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('serialNumber') }}</strong>
+                                        <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
                             </div>

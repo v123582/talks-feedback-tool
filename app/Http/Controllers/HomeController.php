@@ -22,7 +22,7 @@ class HomeController extends Controller
         // create our user data for the authentication
         $userdata = array(
             'email'     => Input::get('email'),
-            'serialNumber'  => Input::get('serialNumber'),
+            'password'  => Input::get('password'),
         );
 
         $user = User::where('email', $userdata['email'])->first();
@@ -34,11 +34,11 @@ class HomeController extends Controller
             // redirect them to the secure section or whatever
             // return Redirect::to('secure');
             // for now we'll just echo success (even though echoing in a controller is bad)
-            echo $user;
+            //echo $user;
+            return Redirect::to('speaker');
+        } else {
 
-        } else {        
-
-            // validation not successful, send back to form 
+            // validation not successful, send back to form
             return Redirect::to('login');
 
         }
@@ -49,4 +49,3 @@ class HomeController extends Controller
         return Redirect::to('login'); // redirect the user to the login screen
     }
 }
-
