@@ -22,7 +22,7 @@ class HomeController extends Controller
         // create our user data for the authentication
         $userdata = array(
             'email'     => Input::get('email'),
-            'password'  => Input::get('password'),
+            'serialNumber'  => Input::get('serialNumber'),
         );
 
         $user = User::where('email', $userdata['email'])->first();
