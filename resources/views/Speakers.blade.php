@@ -4,6 +4,12 @@
 
 <div class="container">
 
+        @if (session()->has('message'))
+            <div class="alert alert-success">
+                {!! session()->get('message') !!}
+            </div>
+        @endif
+
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">

@@ -31,7 +31,7 @@ class SpeakerController extends Controller
         $loginUserId = Auth::user()->id;
         $speakerId = $id;
         $options = Input::get('feel');
-        print_r(compact('loginUserId', 'speakerId', 'options'));
-    }
+        return redirect()->route("speakers")->with('message', 'Update Successfully: Vote to Speaker '.$speakerId.' with Options '.$options);
+   }
 
 }

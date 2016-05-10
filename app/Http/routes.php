@@ -19,11 +19,11 @@ Route::get('login', array('uses' => 'HomeController@showLogin'));
 Route::post('login', array('uses' => 'HomeController@doLogin'));
 Route::get('logout', array('uses' => 'HomeController@doLogout'));
 
-Route::group(['middleware' => ['web', 'auth']], function () {
+Route::group(['middleware' => ['auth']], function () {
 	// 顯示所有演講
-	Route::get('speaker', array('uses' => 'SpeakerController@showAll'));
+	Route::get('speakers', array('as'=>'speakers', 'uses' => 'SpeakerController@showAll'));
 	// 顯示單一演講
-	Route::get('speaker/{id}', array('uses' => 'SpeakerController@showOne'));
+	Route::get('speaker/{id}', array('as'=>'speaker', 'uses' => 'SpeakerController@showOne'));
 	// 對於單一演講投票
 	Route::post('speaker/{id}', array('uses' => 'SpeakerController@vote'));
 });
