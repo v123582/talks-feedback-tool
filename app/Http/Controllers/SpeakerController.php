@@ -15,7 +15,16 @@ class SpeakerController extends Controller
     public function showAll()
     {
         $speakers = Speaker::orderBy('id', 'asc')->paginate(10);
-        return view('Speakers', compact('speakers'));
+        $userVotes = Auth::user()->votes;
+        $userSpeakerVotes = array();
+        foreach($userVotes as $key => $value) {
+            $userSpeakerVotes[$value['speaker_id']] = $value['result'];
+        }
+        $voteDone = false;
+        if(count($userSpeakerVotes) == count($speakers))
+            $voteDone = true;
+
+        return view('Speakers', compact('speakers', 'userSpeakerVotes', 'voteDone'));
     }
     // 顯示單一演講
     public function showOne($id)

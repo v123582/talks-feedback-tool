@@ -13,5 +13,10 @@ class UserTableSeeder extends Seeder {
 	        'email'     => 'admin@admin.com',
 	        'serialNumber' => 'admin',
 	    ));
+	     User::create(array(
+          	'name'     => 'test',
+	        'email'     => 'test@test.com',
+	        'serialNumber' => 'test',
+	    ));
     }
 }
