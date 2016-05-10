@@ -11,21 +11,27 @@ use App\Speaker;
 
 class SpeakerController extends Controller
 {
-    public function show()
+    // 顯示所有演講
+    public function showAll()
     {
         $speakers = Speaker::orderBy('id', 'asc')->paginate(10);
-        return view('Speaker', compact('speakers'));
-        //return view('Speaker');
+        return view('Speakers', compact('speakers'));
     }
-    public function vote($id)
+    // 顯示單一演講
+    public function showOne($id)
     {
-        return view('vote');
+        $speakerId = $id;
+        $speaker = Speaker::findOrFail($id);
+        return view('Speaker', compact('speaker'));
     }
 
-    public function dovote()
+    // 對於單一演講投票
+    public function vote($id)
     {
-        $feel = Input::get('feel');
-        echo $feel;
+        $loginUserId = Auth::user()->id;
+        $speakerId = $id;
+        $options = Input::get('feel');
+        print_r(compact('loginUserId', 'speakerId', 'options'));
     }
 
 }
