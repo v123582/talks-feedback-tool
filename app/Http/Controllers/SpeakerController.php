@@ -43,4 +43,11 @@ class SpeakerController extends Controller
         return redirect()->route("speakers")->with('message', 'Update Successfully: Vote to Speaker '.$speakerId.' with Options '.$options);
    }
 
+   public function result()
+   {
+     $loginUserId = Auth::user()->id;
+     $userVotes = Auth::user()->votes;
+     return view('result', compact('loginUserId','userVotes'));
+   }
+
 }

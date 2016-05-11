@@ -8,9 +8,12 @@
                 <div class="panel-heading">Welcome</div>
 
                 <div class="panel-body">
-                    Your Application's Landing Page.
+                    <p>每個人的願都需要很多正向心能量才能完成，</p>
+                    <p>讓我們一起創造心能量</p>
                 </div>
             </div>
+
+            <center><button class='btn btn-default'><a href="{{ url('/login') }}">Login</a></button></center>
         </div>
     </div>
 </div>
