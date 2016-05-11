@@ -35,7 +35,7 @@ class HomeController extends Controller
             // return Redirect::to('secure');
             // for now we'll just echo success (even though echoing in a controller is bad)
             //echo $user;
-            return Redirect::to('speaker');
+            return Redirect::to('speakers');
         } else {
 
             // validation not successful, send back to form

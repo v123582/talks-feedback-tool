@@ -11,21 +11,36 @@ use App\Speaker;
 
 class SpeakerController extends Controller
 {
-    public function show()
+    // 顯示所有演講
+    public function showAll()
     {
         $speakers = Speaker::orderBy('id', 'asc')->paginate(10);
-        return view('Speaker', compact('speakers'));
-        //return view('Speaker');
+        $userVotes = Auth::user()->votes;
+        $userSpeakerVotes = array();
+        foreach($userVotes as $key => $value) {
+            $userSpeakerVotes[$value['speaker_id']] = $value['result'];
+        }
+        $voteDone = false;
+        if(count($userSpeakerVotes) == count($speakers))
+            $voteDone = true;
+
+        return view('Speakers', compact('speakers', 'userSpeakerVotes', 'voteDone'));
     }
-    public function vote($id)
+    // 顯示單一演講
+    public function showOne($id)
     {
-        return view('vote');
+        $speakerId = $id;
+        $speaker = Speaker::findOrFail($id);
+        return view('Speaker', compact('speaker'));
     }
 
-    public function dovote()
+    // 對於單一演講投票
+    public function vote($id)
     {
-        $feel = Input::get('feel');
-        echo $feel;
-    }
+        $loginUserId = Auth::user()->id;
+        $speakerId = $id;
+        $options = Input::get('feel');
+        return redirect()->route("speakers")->with('message', 'Update Successfully: Vote to Speaker '.$speakerId.' with Options '.$options);
+   }
 
 }

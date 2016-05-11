@@ -14,20 +14,35 @@ class VotesTableSeeder extends Seeder
     public function run()
     {
       DB::table('votes')->delete();
-       Vote::create(array(
-        'name_id'     => '1',
-        'speak_id'     => 'speak1',
-        'result' => '愛,勇氣,希望',
-       ));
-       Vote::create(array(
-        'name_id'     => '1',
-        'speak_id'     => 'speak2',
-        'result' => '畢業',
-       ));
-       Vote::create(array(
-        'name_id'     => '1',
-        'speak_id'     => 'speak3',
-        'result' => 'yo',
-       ));
+        Vote::create(array(
+          'user_id'   => '1',
+          'speaker_id'  => '1',
+          'result'    => '1',
+        ));
+        Vote::create(array(
+          'user_id'   => '1',
+          'speaker_id'  => '2',
+          'result'    => '3',
+        ));
+        Vote::create(array(
+          'user_id'   => '2',
+          'speaker_id'  => '1',
+          'result'    => '3',
+        ));
+        Vote::create(array(
+          'user_id'   => '2',
+          'speaker_id'  => '2',
+          'result'    => '3',
+        ));
+        Vote::create(array(
+          'user_id'   => '2',
+          'speaker_id'  => '3',
+          'result'    => '3',
+        ));
+        Vote::create(array(
+          'user_id'   => '2',
+          'speaker_id'  => '4',
+          'result'    => '3',
+        ));
     }
 }
