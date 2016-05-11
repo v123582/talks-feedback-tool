@@ -12,7 +12,7 @@
 
         <!-- Page Heading -->
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-xs-12">
                 <h1 class="page-header">
                     <center><img src="images/ted.png">Hsinchu
                     <p><small>創新創業   |   創愛創願</small></p></center>
@@ -23,27 +23,21 @@
         <!-- /.row -->
 
         <!-- Projects Row -->
+        <center>
         <div class="row">
             @foreach($speakers as $speaker)
               <div class="col-xs-6 portfolio-item">
                   @if(!isset($userSpeakerVotes[$speaker -> id]))
                     <a href="speaker/{{ $speaker->id }}">
                       <img class="img-responsive" src="{{ $speaker -> photo }}" alt="">
-                      <center>
-                        <h3>{{ $speaker->topic }} by {{ $speaker->name }}</h3>
-                      </center>
                     </a>
                   @else
                     <img class="img-responsive" src="{{ $speaker -> vphoto }}" alt="">
-                    <center>
-                      <h3>{{ $speaker->topic }} by {{ $speaker->name }}</h3>
-                      <h3>vote: {{ $userSpeakerVotes[$speaker -> id] or '' }}</h3>
-                    </center>
                   @endif
               </div>
             @endforeach
         </div>
-
+      </center>
         @if($voteDone)
           <!-- Projects Row -->
           <div class="row" style='margin:0 auto;text-align:center;'>

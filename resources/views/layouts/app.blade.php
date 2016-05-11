@@ -23,6 +23,22 @@
         .fa-btn {
             margin-right: 6px;
         }
+        #speaker-background {
+          width: 100%;
+          height: 500px;
+          background-image: url('../images/test.jpg');
+          background-repeat: round;
+          position: relative;
+        }
+
+        #feeling-form {
+          width: 100%;
+          height: 40%;
+          background-color: rgba(255, 255, 255, 0.8);
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
     </style>
 </head>
 <body id="app-layout">
@@ -31,44 +47,37 @@
             <div class="navbar-header">
 
                 <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                     <span class="sr-only">Toggle Navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button>
+                </button> -->
+
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img width="65%" src="../images/title.png">
                 </a>
+                <div style="float:right;">
+                  <ul class="nav navbar-nav navbar-right">
+                      <!-- Authentication Links -->
+                      @if (Auth::guest())
 
+                        <!--  <li><a href="{{ url('/login') }}">Login</a></li> -->
+                      @else
+                          <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                  {{ Auth::user()->email }} <span class="caret"></span>
+                              </a>
+                              <ul class="dropdown-menu" role="menu">
+                                  <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                              </ul>
+                          </li>
+                      @endif
+                  </ul>
             </div>
-
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/speakers') }}">Speakers</a></li>
-                </ul>
-
-                <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                    @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->email }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                            </ul>
-                        </li>
-                    @endif
-                </ul>
-            </div>
+          </div>
         </div>
     </nav>
 
