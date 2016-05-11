@@ -26,4 +26,6 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('speaker/{id}', array('as'=>'speaker', 'uses' => 'SpeakerController@showOne'));
 	// 對於單一演講投票
 	Route::post('speaker/{id}', array('uses' => 'SpeakerController@vote'));
+
+  Route::get('result',array('uses' => 'SpeakerController@result'));
 });

@@ -16,28 +16,32 @@ class SpeakerTableSeeder extends Seeder
       DB::table('speakers')->delete();
       Speaker::create(array(
         'name'     => 'speaker1',
-        'photo'     => 'http://placehold.it/750x450',
+        'photo'     => './images/speaker1.png',
+        'vphoto'     => './images/vspeaker1.png',
         'topic'     => 'topic one',
         'description' => 'nice men',
         'period' => '2016/05/20',
        ));
       Speaker::create(array(
         'name'     => 'speaker2',
-        'photo'     => 'http://placehold.it/750x450',
+        'photo'     => './images/speaker2.png',
+        'vphoto'     => './images/vspeaker2.png',
         'topic'     => 'topic two',
         'description' => 'nice men',
         'period' => '2016/05/20',
       ));
       Speaker::create(array(
         'name'     => 'speaker3',
-        'photo'     => 'http://placehold.it/750x450',
+        'photo'     => './images/speaker3.png',
+        'vphoto'     => './images/vspeaker3.png',
         'topic'     => 'topic three',
         'description' => 'nice men',
         'period' => '2016/05/20',
       ));
       Speaker::create(array(
         'name'     => 'speaker4',
-        'photo'     => 'http://placehold.it/750x450',
+        'photo'     => './images/speaker4.png',
+        'vphoto'     => './images/vspeaker4.png',
         'topic'     => 'topic four',
         'description' => 'nice men',
         'period' => '2016/05/20',
