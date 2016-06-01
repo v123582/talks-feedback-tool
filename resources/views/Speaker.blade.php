@@ -32,42 +32,42 @@
                                 {!! csrf_field() !!}
                                           <div class="form-group">
                                              <div class="col-xs-3">
-                                                 <input type="checkbox" value="1" name="feeling1"> 愛
+                                                 <input type="checkbox" value="1" name="feeling1[]"> 愛
                                              </div>
                                          </div>
                                          <div class="form-group">
                                             <div class="col-xs-3">
-                                                <input type="checkbox" value="2" name="feeling1"> 願景
+                                                <input type="checkbox" value="2" name="feeling1[]"> 願景
                                             </div>
                                         </div>
                                         <div class="form-group">
                                            <div class="col-xs-3">
-                                               <input type="checkbox" value="3" name="feeling1"> 勇敢
+                                               <input type="checkbox" value="3" name="feeling1[]"> 勇敢
                                            </div>
                                        </div>
                                        <div class="form-group">
                                           <div class="col-xs-3">
-                                              <input type="checkbox" value="4" name="feeling1"> 自信
+                                              <input type="checkbox" value="4" name="feeling1[]"> 自信
                                           </div>
                                       </div>
                                       <div class="form-group">
                                          <div class="col-xs-3">
-                                             <input type="checkbox" value="5" name="feeling1"> 堅持
+                                             <input type="checkbox" value="5" name="feeling1[]"> 堅持
                                          </div>
                                      </div>
                                      <div class="form-group">
                                         <div class="col-xs-3">
-                                            <input type="checkbox" value="6" name="feeling1"> 智慧
+                                            <input type="checkbox" value="6" name="feeling1[]"> 智慧
                                         </div>
                                     </div>
                                     <div class="form-group">
                                        <div class="col-xs-3">
-                                           <input type="checkbox" value="7" name="feeling1"> 創意
+                                           <input type="checkbox" value="7" name="feeling1[]"> 創意
                                        </div>
                                    </div>
                                    <div class="form-group">
                                       <div class="col-xs-3">
-                                          <input type="checkbox" value="8" name="feeling1"> 實踐
+                                          <input type="checkbox" value="8" name="feeling1[]"> 實踐
                                       </div>
                                   </div>
 
