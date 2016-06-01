@@ -8,6 +8,7 @@ use Auth;
 use Redirect;
 use App\User;
 use App\Speaker;
+use App\Vote;
 
 class SpeakerController extends Controller
 {
@@ -39,8 +40,10 @@ class SpeakerController extends Controller
     {
         $loginUserId = Auth::user()->id;
         $speakerId = $id;
-        $options = Input::get('feel');
-        return redirect()->route("speakers")->with('message', 'Update Successfully: Vote to Speaker '.$speakerId.' with Options '.$options);
+        $options = Input::get('feeling1');
+        $userVotes = array('user_id' => (string)$loginUserId, 'speaker_id' => $speakerId, 'result' => implode(",",$options));
+        Vote::create($userVotes);
+        return redirect()->route("speakers")->with('message', 'Update Successfully: Vote to Speaker '.$speakerId.' with Options '.implode(",",$options));
    }
 
    public function result()
