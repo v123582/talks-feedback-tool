@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::get('login', array('uses' => 'HomeController@showLogin'));
 Route::post('login', array('uses' => 'HomeController@doLogin'));
 Route::get('logout', array('uses' => 'HomeController@doLogout'));
+Route::get('chart/{id}', array('uses' => 'VoteController@show'));
 
 Route::group(['middleware' => ['auth']], function () {
 	// 顯示所有演講
@@ -28,4 +29,5 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::post('speaker/{id}', array('uses' => 'SpeakerController@vote'));
 
   Route::get('result',array('uses' => 'SpeakerController@result'));
+
 });
