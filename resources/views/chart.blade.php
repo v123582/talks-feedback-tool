@@ -41,6 +41,11 @@
 <script>
 var chartData = <?php echo $votes; ?>;
 </script>
+講師 : {{ $speaker->name }}<br>
+時段 :
+@if($speaker->event == 0) 早上
+@else 下午
+@endif
 <div id="chartdiv"></div>
 
 @endsection

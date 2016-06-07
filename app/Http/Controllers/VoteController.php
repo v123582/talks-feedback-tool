@@ -7,12 +7,14 @@ use Illuminate\Support\Facades\Input;
 use Redirect;
 use DB;
 use App\Vote;
+use App\Speaker;
 
 class VoteController extends Controller
 {
   public function show($id)
   {
     $speakerId = $id;
+    $speaker = Speaker::findOrFail($id);
     $votes = DB::table('votes')->select(DB::raw('result, count(*) as count'))->where('speaker_id', $speakerId)->groupby('result')->get();
     // $index_array = array('1'=>'愛', '2'=>'願景', '3'=>'勇敢', '4'=>'自信', '5'=>'堅持', '6'=>'智慧', '7'=>'創意', '8'=>'實踐');
     $data = array();
@@ -29,7 +31,7 @@ class VoteController extends Controller
       }
     }
     $votes = json_encode($votes);
-    return view('chart', compact('votes'));
+    return view('chart', compact('votes','speaker'));
   }
 }
 ?>
