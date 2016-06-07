@@ -19,6 +19,7 @@ class CreateSpeakersTable extends Migration
           $table->string('vphoto');
           $table->string('topic');
           $table->string('description');
+          $table->string('event');
           $table->string('period');
           $table->rememberToken();
           $table->timestamps();

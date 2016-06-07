@@ -15,7 +15,9 @@
             <div class="col-xs-12">
                 <h1 class="page-header">
                     <center><img src="images/ted.png">Hsinchu
-                    <p><small>創新創業   |   創愛創願</small></p></center>
+                      <p><small>創新創業   |   創愛創願</small></p>
+                      <p>上午   |   下午</p>
+                    </center>
                 </h1>
 
             </div>
