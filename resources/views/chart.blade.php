@@ -39,8 +39,10 @@
 </style>
 
 <script>
-var chartData = <?php echo $votes; ?>;
+var chartData = <?php echo $votes; ?>;  //頁面初始化
 </script>
+
+<p id="speakerId" style="display:none;">{{ $speaker->id }}</p>
 講師 : {{ $speaker->name }}<br>
 時段 :
 @if($speaker->event == 0) 早上

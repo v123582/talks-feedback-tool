@@ -55,4 +55,15 @@ $(document).ready(function() {
     var wedge = e.dataItem.wedge.node;
     wedge.parentNode.appendChild(wedge);
   }
+
+  //set timeInterval to get data
+  setInterval(function () {
+    var id = $('#speakerId').text();  //speaker id
+    $.get('../getChart', {id:id}, function(data) {
+      var data = $.parseJSON(data);
+      chart.dataProvider = data;
+      chart.validateData();
+    });
+  },5000)
+
 });
