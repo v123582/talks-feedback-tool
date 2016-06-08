@@ -17,7 +17,8 @@
 #chartdiv {
   width: 100%;
   height: 500px;
-  font-size: 11px;
+  font-size: 14px;
+  padding: 10px;
 }
 
 .amcharts-pie-slice {
@@ -42,12 +43,21 @@
 var chartData = <?php echo $votes; ?>;  //頁面初始化
 </script>
 
-<p id="speakerId" style="display:none;">{{ $speaker->id }}</p>
-講師 : {{ $speaker->name }}<br>
-時段 :
-@if($speaker->event == 0) 早上
-@else 下午
-@endif
-<div id="chartdiv"></div>
+<div class="row">
+  <div class="col-xs-12">
+    <p id="speakerId" style="display:none;">{{ $speaker->id }}</p>
+    講師 : {{ $speaker->name }}<br>
+    時段 :
+    @if($speaker->event == 0) 早上
+    @else 下午
+    @endif
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div id="chartdiv"></div>
+  </div>
+</div>
 
 @endsection

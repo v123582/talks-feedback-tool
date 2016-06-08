@@ -6,8 +6,14 @@ $(document).ready(function() {
     "addClassNames": true,
     "legend":{
      	"position":"right",
-      "marginRight":100,
-      "autoMargins":false
+      "marginRight":10,
+      "autoMargins":false,
+      "marginTop": 0,
+      "marginBottom": 0,
+      "marginLeft": 0,
+      "marginRight": 0,
+      "pullOutRadius": 0,
+      "position": "bottom"
     },
     "innerRadius": "30%",
     "defs": {
