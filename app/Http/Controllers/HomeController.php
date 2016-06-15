@@ -23,12 +23,49 @@ class HomeController extends Controller
         $userdata = array(
             'email'     => Input::get('email'),
             'serialNumber'  => Input::get('serialNumber'),
+            'isFbLogin'  => Input::get('isFbLogin'),
+            'FbEmail'  => Input::get('FbEmail'),  
+            'FbName'  => Input::get('FbName'),
+            'FbserialNumber'  => Input::get('FbserialNumber')          
         );
 
-        $user = User::where('email', $userdata['email'])->first();
+        $isFbLogin = $userdata['isFbLogin'];
+        $FbEmail = $userdata['FbEmail']; 
+        $FbName = $userdata['FbName']; 
+        $FbserialNumber = (string)$userdata['FbserialNumber']; 
+        $userWithFaceBook = false;
+        $userWithEmail = false;
+        $userWithSerialNumber = false;
+
+
+        // return compact('FbserialNumber');
+
+        if($isFbLogin){
+            $createUser = array(
+                'name'     => $FbName,
+                'email'     => $FbEmail,
+                'serialNumber' => $FbserialNumber,
+            );
+
+            $user = $userWithFaceBook = User::firstOrCreate($createUser);
+        }
+
+        else{
+
+            $user = $userWithSerialNumber = User::where('serialNumber', $userdata['serialNumber'])->first();
+            $user = $userWithEmail = User::where('email', $userdata['email'])->first();
+
+            $userWithEmail = isset($userWithEmail);
+            $userWithSerialNumber = isset($userWithSerialNumber);
+        }
+
+        $isLogin = $userWithEmail || $userWithSerialNumber || $userWithFaceBook;
+
+
+
 
         // attempt to do the login
-        if ($user && Auth::loginUsingId($user['id'])) {
+        if ($isLogin && $user && Auth::loginUsingId($user['id'])) {
 
             // validation successful!
             // redirect them to the secure section or whatever
@@ -39,7 +76,7 @@ class HomeController extends Controller
         } else {
 
             // validation not successful, send back to form
-            return Redirect::to('login');
+            return Redirect::to('/')->with('message', '登入失敗，請輸入正確資料！');
 
         }
     }
