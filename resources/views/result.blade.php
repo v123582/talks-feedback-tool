@@ -4,7 +4,9 @@
 
 <div style="background-image:url('../images/final.png'); width:100%; height:500px;background-repeat: round;position: relative;">
 user : {{$loginUserId}}
-{{$votes}}
+@foreach($votes as $vote)
+{{$vote->result}}
+@endforeach
 
 
 
