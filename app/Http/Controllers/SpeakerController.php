@@ -41,8 +41,12 @@ class SpeakerController extends Controller
         $loginUserId = Auth::user()->id;
         $speakerId = $id;
         $options = Input::get('feeling1');
-        $userVotes = array('user_id' => (string)$loginUserId, 'speaker_id' => $speakerId, 'result' => implode(",",$options));
-        Vote::create($userVotes);
+        foreach($options as $option) {
+          $userVotes = array('user_id' => (string)$loginUserId, 'speaker_id' => $speakerId, 'result' => $option);
+          Vote::create($userVotes);
+        }
+        // $userVotes = array('user_id' => (string)$loginUserId, 'speaker_id' => $speakerId, 'result' => implode(",",$options));
+        // Vote::create($userVotes);
         return redirect()->route("speakers")->with('message', 'Update Successfully: Vote to Speaker '.$speakerId.' with Options '.implode(",",$options));
    }
 
