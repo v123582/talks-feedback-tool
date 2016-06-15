@@ -17,6 +17,7 @@ class CreateSpeakersTable extends Migration
           $table->string('name');
           $table->string('photo');
           $table->string('vphoto');
+          $table->string('tphoto');
           $table->string('topic');
           $table->string('description');
           $table->string('event');
