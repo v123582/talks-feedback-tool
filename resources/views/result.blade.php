@@ -3,16 +3,20 @@
 @section('content')
 
 <div style="background-image:url('../images/final.png'); width:100%; height:500px;background-repeat: round;position: relative;">
-user : {{$loginUserId}}
-@foreach($votes as $vote)
-{{$vote->result}}
-@endforeach
 
+<div style="position: absolute;top:10%;left:25%;">
+  <br />
+  @foreach($votes as $vote)
+  {{$vote->result}}
+  {{$vote->count}}
+  <br />
+  @endforeach
+</div>
 
 
 <center>
-  <button style="margin-right:25px;margin-top:50px;" class="btn btn-primary" onclick="" >分享到ＦＢ</button>
-  <button style="margin-top:50px;" class="btn btn-danger" onclick="location.href='/'">回到主畫面</button>
+  <button style="position: absolute; bottom: 10px; left:30px;" class="btn btn-primary" onclick="" >分享到ＦＢ</button>
+  <button style="position: absolute; bottom: 10px; right:30px;" class="btn btn-danger" onclick="location.href='/'">回到主畫面</button>
 </center>
 
 </div>
