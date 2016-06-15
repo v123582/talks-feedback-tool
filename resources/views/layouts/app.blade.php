@@ -33,7 +33,7 @@
 
         #feeling-form {
           width: 100%;
-          height: 40%;
+          height: 50%;
           background-color: rgba(255, 255, 255, 0.8);
           position: absolute;
           bottom: 0;

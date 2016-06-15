@@ -7,11 +7,13 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <center>講者 {{ $speaker->name }}</center>
+                    <center>講者 <span style="font-size:20px;font-weight:bolder;">{{ $speaker->name }}</span></br>
+                      <span style="font-size:18px;">{{ $speaker-> topic }}</span>
+                    </center>
                     <a href="{{ url('/speakers') }}">返回</a>
                 </div>
                 <div class="panel-body" >
-                  <div id="speaker-background">
+                  <div id="speaker-background" style = "background-image: url('{{ $speaker -> tphoto}}');">
                       <div id="feeling-form">
                           <center>
                           <div class="row">
@@ -21,7 +23,7 @@
                           </center>
 
                           <div id="page2-content">
-                             <div style="padding:30px;text-align:center;font-size:26px;">{{ $speaker -> description}}</div>
+                             <div style="padding:10px;text-align:center;font-size:16px;">{{ $speaker -> description}}</div>
                           </div>
 
                           <div id="page1-content" >
