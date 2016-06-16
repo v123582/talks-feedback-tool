@@ -23,7 +23,7 @@
         }
 
         .fa-btn {
-            margin-right: 6px;
+            margin-right: 2px;
         }
         #speaker-background {
           width: 100%;
@@ -46,7 +46,7 @@
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
-            <div class="navbar-header">
+            <div class="navbar-header" style="height:80px;">
 
                 <!-- Collapsed Hamburger -->
                 <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
@@ -59,7 +59,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img width="65%" src="../images/title.png">
+                    <img width="120%" src="../images/title.png">
                 </a>
                 <div style="float:right;">
                   <ul class="nav navbar-nav navbar-right">
@@ -84,7 +84,7 @@
     </nav>
 
     @yield('content')
-    
+
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>

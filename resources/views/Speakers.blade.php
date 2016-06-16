@@ -15,7 +15,7 @@
             <div class="col-xs-12">
                 <h1 class="page-header">
                     <center><img src="images/ted.png">Hsinchu
-                      <p><small>創新創業   |   創愛創願</small></p>
+
                       <!-- <p>上午   |   下午</p> -->
                     </center>
                 </h1>
@@ -79,9 +79,9 @@
       </center>
         @if($voteDone)
           <!-- Projects Row -->
-          <div class="row" style='margin:0 auto;text-align:center;'>
+          <div class="row" style='margin:0 auto;text-align:center;margin-top:20px;'>
               <button class="btn btn-danger" onclick="location.href='result'">看我的結果</button>
-              <p>恭喜大大，你已經收集完所有正能量！</p>
+              <p style="font-size:20px;padding:5px;">恭喜，您已經獲得所有實踐你願景的正向心能量！</p>
           </div>
         @endif
 

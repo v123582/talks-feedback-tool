@@ -5,9 +5,9 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-body" style="text-align:center;">
-                    <p>每個人的願都需要很多正向心能量才能完成，</p>
-                    <p>讓我們一起創造心能量</p>
+                <div class="panel-body" style="text-align:center;font-size:20px;font-weight:bolder;">
+                    <p>每個人的願景都需要很多正向心能量才能完成，</p>
+                    <p>讓我們從聽&nbsp;Ted&nbsp;talks&nbsp;的收穫中一起創造正向心能量!</p>
                 </div>
             </div>
             <center>
@@ -16,8 +16,8 @@
                         {!! session()->get('message') !!}
                     </div>
                 @endif
-            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-            </fb:login-button> 
+                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+              </fb:login-button>
             <p style="color:#AAAAAA;margin-top:10px;">-OR-</p>
             <form class="form-horizontal" name="myform" role="form" method="POST" action="{{ url('/login') }}">
                 {!! csrf_field() !!}
@@ -64,6 +64,8 @@
                     </div>
                 </div>
 
+              本活動由&nbsp;<img width="20%" src="../images/title.png">&nbsp;贊助
+
             </form>
             </center>
         </div>
@@ -73,7 +75,7 @@
 
 
 
-<script>  
+<script>
 
   window.fbAsyncInit = function() {
     FB.init({
@@ -91,59 +93,93 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 
-      // This is called with the results from from FB.getLoginStatus().  
-        function statusChangeCallback(response) {  
-          // console.log('statusChangeCallback');  
-          // console.log(response);  
-          // The response object is returned with a status field that lets the  
-          // app know the current login status of the person.  
-          // Full docs on the response object can be found in the documentation  
-          // for FB.getLoginStatus().  
-          if (response.status === 'connected') {  
-            // Logged into your app and Facebook.  
-            testAPI();  
-          } else if (response.status === 'not_authorized') {  
-            // The person is logged into Facebook, but not your app.  
-            document.getElementById('status').innerHTML = 'Please log ' +  
-              'into this app.';  
-          } else {  
-            // The person is not logged into Facebook, so we're not sure if  
-            // they are logged into this app or not.  
-            document.getElementById('status').innerHTML = 'Please log ' +  
-              'into Facebook.';  
-          }  
-        }  
-          
-        // This function is called when someone finishes with the Login  
-        // Button.  See the onlogin handler attached to it in the sample  
-        // code below.  
-        function checkLoginState() {  
-          FB.getLoginStatus(function(response) {  
-            statusChangeCallback(response);  
-          });  
-        }  
-          
-        // Here we run a very simple test of the Graph API after login is  
-        // successful.  See statusChangeCallback() for when this call is made.  
-        function testAPI() {  
-          
-          FB.login(function(response) {
-            if (response.authResponse) {
-             console.log('Welcome!  Fetching your information.... ');
-             FB.api('/me', {fields: 'name,email'},  function(response) {
-                $('#isFbLogin').val('true');
-                $('#FbEmail').val(response.email);
-                $('#FbName').val(response.name);
-                $('#FbserialNumber').val(response.id);
-                console.log(response);
-                document.myform.submit();
-             });
-            } else {
-             alert('Facebook 登入失敗！');
-            }
-          }, {
-                scope: 'email', 
-                return_scopes: true
-            });
-        }  
-</script>  
+      // This is called with the results from from FB.getLoginStatus().
+        function statusChangeCallback(response) {
+          // console.log('statusChangeCallback');
+          // console.log(response);
+          // The response object is returned with a status field that lets the
+          // app know the current login status of the person.
+          // Full docs on the response object can be found in the documentation
+          // for FB.getLoginStatus().
+          if (response.status === 'connected') {
+            // Logged into your app and Facebook.
+            testAPI();
+          } else if (response.status === 'not_authorized') {
+            // The person is logged into Facebook, but not your app.
+            document.getElementById('status').innerHTML = 'Please log ' +
+              'into this app.';
+          } else {
+            // The person is not logged into Facebook, so we're not sure if
+            // they are logged into this app or not.
+            document.getElementById('status').innerHTML = 'Please log ' +
+              'into Facebook.';
+          }
+        }
+
+        // This function is called when someone finishes with the Login
+        // Button.  See the onlogin handler attached to it in the sample
+        // code below.
+        function checkLoginState() {
+isMobile = (window.location.href == top.location.href && window.location.href.indexOf("/mobile/") != -1);
+if(isMobile){
+          var permissionUrl = "https://m.facebook.com/dialog/oauth?client_id=" + "1721050088149127" + "&response_type=code&redirect_uri=" + "http://140.114.88.18:8080/speakers" + "&scope=" + "email";
+          document.location.href = permissionUrl;
+          $('#isFbLogin').val('true');
+          $('#FbEmail').val(response.email);
+          $('#FbName').val(response.name);
+          $('#FbserialNumber').val(response.id);
+          console.log(response);
+          document.myform.submit();
+}
+          FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+          });
+        }
+
+        // Here we run a very simple test of the Graph API after login is
+        // successful.  See statusChangeCallback() for when this call is made.
+        function testAPI() {
+
+
+          var isMobile = false;
+          try {
+              isMobile = (window.location.href == top.location.href && window.location.href.indexOf("/mobile/") != -1);
+          } catch (e) {}
+          if (!isMobile) {
+            FB.login(function(response) {
+              if (response.authResponse) {
+               console.log('Welcome!  Fetching your information.... ');
+               FB.api('/me', {fields: 'name,email'},  function(response) {
+                  $('#isFbLogin').val('true');
+                  $('#FbEmail').val(response.email);
+                  $('#FbName').val(response.name);
+                  $('#FbserialNumber').val(response.id);
+                  console.log(response);
+                  document.myform.submit();
+               });
+              } else {
+               alert('Facebook 登入失敗！');
+              }
+            }, {
+                  scope: 'email',
+                  return_scopes: true
+              });
+                      } else {
+
+                        var permissionUrl = "https://m.facebook.com/dialog/oauth?client_id=" + "1721050088149127" + "&response_type=code&redirect_uri=" + "http://140.114.88.18:8080/speakers" + "&scope=" + "email&return_scopes=true";
+                        document.location = '';
+                        $('#isFbLogin').val('true');
+                        $('#FbEmail').val(response.email);
+                        $('#FbName').val(response.name);
+                        $('#FbserialNumber').val(response.id);
+                        console.log(response);
+                        document.myform.submit();
+                        return;
+          }
+
+
+
+
+
+        }
+</script>
