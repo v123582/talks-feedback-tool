@@ -16,8 +16,10 @@
                         {!! session()->get('message') !!}
                     </div>
                 @endif
-                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-              </fb:login-button>
+
+
+              <a href="#" id="fbLogin">Login with Facebook</a>
+
             <p style="color:#AAAAAA;margin-top:10px;">-OR-</p>
             <form class="form-horizontal" name="myform" role="form" method="POST" action="{{ url('/login') }}">
                 {!! csrf_field() !!}
@@ -71,27 +73,38 @@
         </div>
     </div>
 </div>
-@endsection
 
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
 <script>
 
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1721050088149127',
-      xfbml      : true,
-      version    : 'v2.6'
-    });
-  };
+//  window.fbAsyncInit = function() {
+//    FB.init({
+//      appId      : '1721050088149127',
+//      xfbml      : true,
+//      version    : 'v2.6'
+//    });
+//  };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
+(function(d, s, id){
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement(s); js.id = id;
+   js.src = "//connect.facebook.net/en_US/sdk.js";
+   fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));
+
+
+  $('#fbLogin').click(function(){
+
+      FB.init({
+        appId      : '1721050088149127',
+        xfbml      : true,
+        version    : 'v2.6'
+      });
+      testAPI();
+
+  });
+
 
       // This is called with the results from from FB.getLoginStatus().
         function statusChangeCallback(response) {
@@ -120,17 +133,7 @@
         // Button.  See the onlogin handler attached to it in the sample
         // code below.
         function checkLoginState() {
-isMobile = (window.location.href == top.location.href && window.location.href.indexOf("/mobile/") != -1);
-if(isMobile){
-          var permissionUrl = "https://m.facebook.com/dialog/oauth?client_id=" + "1721050088149127" + "&response_type=code&redirect_uri=" + "http://140.114.88.18:8080/speakers" + "&scope=" + "email";
-          document.location.href = permissionUrl;
-          $('#isFbLogin').val('true');
-          $('#FbEmail').val(response.email);
-          $('#FbName').val(response.name);
-          $('#FbserialNumber').val(response.id);
-          console.log(response);
-          document.myform.submit();
-}
+
           FB.getLoginStatus(function(response) {
             statusChangeCallback(response);
           });
@@ -140,12 +143,6 @@ if(isMobile){
         // successful.  See statusChangeCallback() for when this call is made.
         function testAPI() {
 
-
-          var isMobile = false;
-          try {
-              isMobile = (window.location.href == top.location.href && window.location.href.indexOf("/mobile/") != -1);
-          } catch (e) {}
-          if (!isMobile) {
             FB.login(function(response) {
               if (response.authResponse) {
                console.log('Welcome!  Fetching your information.... ');
@@ -164,22 +161,10 @@ if(isMobile){
                   scope: 'email',
                   return_scopes: true
               });
-                      } else {
-
-                        var permissionUrl = "https://m.facebook.com/dialog/oauth?client_id=" + "1721050088149127" + "&response_type=code&redirect_uri=" + "http://140.114.88.18:8080/speakers" + "&scope=" + "email&return_scopes=true";
-                        document.location = '';
-                        $('#isFbLogin').val('true');
-                        $('#FbEmail').val(response.email);
-                        $('#FbName').val(response.name);
-                        $('#FbserialNumber').val(response.id);
-                        console.log(response);
-                        document.myform.submit();
-                        return;
-          }
-
-
 
 
 
         }
 </script>
+
+@endsection
