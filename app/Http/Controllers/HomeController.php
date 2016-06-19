@@ -47,16 +47,22 @@ class HomeController extends Controller
                 'serialNumber' => $FbserialNumber,
             );
 
+            if( !$createUser['email'] )
+                return Redirect::to('/')->with('message', '登入失敗，請輸入正確資料！');
             $user = $userWithFaceBook = User::firstOrCreate($createUser);
         }
 
         else{
 
-            $user = $userWithSerialNumber = User::where('serialNumber', $userdata['serialNumber'])->first();
-            $user = $userWithEmail = User::where('email', $userdata['email'])->first();
+            $userWithSerialNumber = User::where('serialNumber', $userdata['serialNumber'])->first();
+            $user = $userWithSerialNumber;
+            $userWithEmail = User::where('email', $userdata['email'])->first();
 
             $userWithEmail = isset($userWithEmail);
             $userWithSerialNumber = isset($userWithSerialNumber);
+
+            if($userWithEmail)
+                $user = $userWithEmail;
         }
 
         $isLogin = $userWithEmail || $userWithSerialNumber || $userWithFaceBook;
