@@ -71,9 +71,8 @@ class SpeakerController extends Controller
          case "9": $value->result = '其他'; break;
        }
      }
-     $shareUrl = '/'+ $loginUserId;
 
-     return view('result', compact('loginUserId','userVotes','votes', 'shareUrl'));
+     return view('result', compact('loginUserId','userVotes','votes'));
    }
 
 

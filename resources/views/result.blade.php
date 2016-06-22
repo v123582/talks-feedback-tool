@@ -15,7 +15,7 @@
 
 
 <center>
-  <a href="https://www.facebook.com/sharer.php?u={{ url($shareUrl) }}" target="_blank" title="Facebook"><button style="position: absolute; bottom: 10px; left:30px;" class="btn btn-primary" onclick="" >分享到ＦＢ</button></a>
+  <a href="https://www.facebook.com/sharer.php?u={{ url('result/' . $loginUserId) }}" target="_blank" title="Facebook"><button style="position: absolute; bottom: 10px; left:30px;" class="btn btn-primary" onclick="" >分享到ＦＢ</button></a>
   <button style="position: absolute; bottom: 10px; right:30px;" class="btn btn-danger" onclick="location.href='/'">回到主畫面</button>
 </center>
 
