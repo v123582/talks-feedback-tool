@@ -22,6 +22,7 @@
 <script src="https://www.amcharts.com/lib/3/pie.js"></script>
 <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 
+
 <!-- chart.js -->
 <script src="../js/chart.js"></script>
 
@@ -63,9 +64,10 @@ var chartData = <?php echo $votes; ?>;  //頁面初始化
   </div>
 </div>
 </center>
-
+<center>
 <div class="row">
   <div class="col-md-12">
     <div id="chartdiv" style="font-size:250%;"></div>
   </div>
 </div>
+</center>
