@@ -32,3 +32,5 @@ Route::group(['middleware' => ['auth']], function () {
   Route::get('result',array('uses' => 'SpeakerController@result'));
 
 });
+
+Route::get('result/{id}',array('uses' => 'SpeakerController@resultShare'));
