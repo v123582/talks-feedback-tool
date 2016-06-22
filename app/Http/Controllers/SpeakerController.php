@@ -10,6 +10,7 @@ use Redirect;
 use App\User;
 use App\Speaker;
 use App\Vote;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class SpeakerController extends Controller
 {
@@ -70,9 +71,41 @@ class SpeakerController extends Controller
          case "9": $value->result = '其他'; break;
        }
      }
-    
 
      return view('result', compact('loginUserId','userVotes','votes'));
    }
 
+
+   public function resultShare($id)
+   {
+     
+     
+
+        try {
+            $user = User::findOrFail($id);
+            $loginUserId = $user->id;
+            $loginUserEmail = $user->email;
+            $userVotes =$user->votes;
+            $votes = DB::table('votes')->select(DB::raw('result, count(*) as count'))->where('user_id', $loginUserId)->groupby('result')->get();
+
+            foreach($votes as $index => $value) {
+                switch($value->result) {  //用中文取代投票result的編號
+                    case "1": $value->result = '愛'; break;
+                    case "2": $value->result = '使命感'; break;
+                    case "3": $value->result = '智慧'; break;
+                    case "4": $value->result = '實踐力'; break;
+                    case "5": $value->result = '領導力'; break;
+                    case "6": $value->result = '啟發'; break;
+                    case "7": $value->result = '信心'; break;
+                    case "8": $value->result = '創造力'; break;
+                    case "9": $value->result = '其他'; break;
+                }
+            }
+            
+
+            return view('resultShare', compact('loginUserId', 'loginUserEmail','userVotes','votes'));
+        } catch (ModelNotFoundException $ex) {
+          return 'error';
+        }
+    }
 }
