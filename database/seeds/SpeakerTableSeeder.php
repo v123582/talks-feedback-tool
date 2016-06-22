@@ -106,7 +106,7 @@ class SpeakerTableSeeder extends Seeder
                ));
                Speaker::create(array(
                  'name'     => '鄭俊德',
-                 'photo'     => './images/speaker10.jpg',
+                 'photo'     => './images/speaker10.png',
                  'vphoto'     => './images/vspeaker10.png',
                  'tphoto'     => '../images/tspeaker10.jpg',
                  'topic'     => '閱讀社群創辦人',

@@ -14,12 +14,8 @@
         <div class="row">
             <div class="col-xs-12">
                 <h1 class="page-header">
-                    <center><img src="images/ted.png">Hsinchu
-
-                      <!-- <p>上午   |   下午</p> -->
-                    </center>
+                    <img  width="100%" src="images/ted.png">
                 </h1>
-
             </div>
         </div>
         <!-- /.row -->

@@ -19,7 +19,7 @@
 
     <style>
         body {
-            font-family: 'Lato';
+            font-family: '微軟正黑體';
         }
 
         .fa-btn {
@@ -49,23 +49,15 @@
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
-            <div class="navbar-header" style="height:80px;">
+            <div class="navbar-header" >
 
-                <!-- Collapsed Hamburger -->
-                <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button> -->
+                  <a class="navbar-brand" href="{{ url('/') }}">
+                      <img src="../images/title.png"  width="50%" >
+                  </a>
 
-
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    <img width="120%" src="../images/title.png">
-                </a>
-                <div style="float:right;">
-                  <ul class="nav navbar-nav navbar-right">
+            </div>
+            <div style="float:right;">
+                  <ul style="list-style-type :none;">
                       <!-- Authentication Links -->
                       @if (Auth::guest())
 
@@ -73,7 +65,7 @@
                       @else
                           <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                  {{ Auth::user()->email }} <span class="caret"></span>
+                                  <span class="glyphicon glyphicon-user"></span> &nbsp; {{ Auth::user()->email }} <span class="caret"></span>
                               </a>
                               <ul class="dropdown-menu" role="menu">
                                   <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
@@ -81,8 +73,8 @@
                           </li>
                       @endif
                   </ul>
-            </div>
-          </div>
+
+            <div>
         </div>
     </nav>
 

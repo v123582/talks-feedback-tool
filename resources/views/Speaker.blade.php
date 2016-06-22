@@ -21,7 +21,7 @@
                               <div id="page2" class="col-xs-6" style="background-color:white;padding:5px;color:#AAAAAA;">關於</div>
                           </div>
 
-
+                          @if($speaker->id == 10) test @endif
                           <div id="page2-content">
                              <div style="padding:10px;text-align:center;font-size:16px;">{{ $speaker -> description}}</div>
                           </div>
@@ -125,7 +125,7 @@
                                   <br />
                               </form>
 
-                      </div>
+
                   </div>
 
                 </div>
@@ -154,7 +154,7 @@
                 $('#page1').css('font-weight','normal');
                 $('#page1').css('font-weight','normal');
                 $('#page2-content').html($content2);
-                $('#page1-content').html('');
+                $('#page1-content').remove();
           });
 
           $('#page1').click(function(){
