@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <meta name="og:description" content="他總共獲得了 ... " />
+    <meta property="og:title" content="{{ $loginUserEmail }} 在 TedxHsinchu 的體驗"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http://localhost:8000/result/{{ $loginUserId }}"/>
+    <meta property="og:image" content="http://i.imgur.com/xJwaGvb.png"/>
+    <meta property="og:site_name" content="心願體驗 | Heart CreAction" />
+
     <title>Ted x Hsinchu</title>
 
     <!-- Fonts -->

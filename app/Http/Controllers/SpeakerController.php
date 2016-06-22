@@ -71,9 +71,9 @@ class SpeakerController extends Controller
          case "9": $value->result = '其他'; break;
        }
      }
-    
+     $shareUrl = '/'+ $loginUserId;
 
-     return view('result', compact('loginUserId','userVotes','votes'));
+     return view('result', compact('loginUserId','userVotes','votes', 'shareUrl'));
    }
 
 
@@ -103,7 +103,8 @@ class SpeakerController extends Controller
                 }
             }
             
-            return view('resultShare', compact('loginUserEmail','userVotes','votes'));
+
+            return view('resultShare', compact('loginUserId', 'loginUserEmail','userVotes','votes'));
         } catch (ModelNotFoundException $ex) {
           return 'error';
         }
