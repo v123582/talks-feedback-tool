@@ -54,15 +54,12 @@
 <script>
 var chartData = <?php echo $votes; ?>;  //頁面初始化
 </script>
-  <center><img src="../images/title.png"  width="30%" >
+  <center><img src="../images/title.png"  width="25%" >
 <div class="row">
   <div class="col-md-12" style="font-size:250%;">
+    <img src="../{{$speaker->photo}}" width="150px;">
     <p id="speakerId" style="display:none;">{{ $speaker->id }}</p>
-    講師 : {{ $speaker->name }}<br>
-    時段 :
-    @if($speaker->event == 0) 早上
-    @else 下午
-    @endif
+    <div style="position:relative; bottom:60px;display:inline;">講師 : {{ $speaker->name }}</div><br>
   </div>
 </div>
 </center>
