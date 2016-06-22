@@ -3,7 +3,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(5px);
+    transform: translateY(25px);
   }
   100% {
     transform: translateY(0);
@@ -194,6 +194,7 @@ input[type=checkbox] {
 }
 
 .checkbox input[type=checkbox]:checked + label {
+   vertical-align : middle;
 	 display: block;
     background-image: url(../images/1.png);
     width: 80px;
@@ -219,6 +220,7 @@ input[type=checkbox] {
 }
 
 .checkbox2 input[type=checkbox]:checked + label {
+   vertical-align : middle;
     display: block;
     background-image: url(../images/2.png);
     width: 80px;
