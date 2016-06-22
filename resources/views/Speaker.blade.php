@@ -7,12 +7,12 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <center>講者 <span style="font-size:20px;font-weight:bolder;">{{ $speaker->name }}</span></br>
+                    <center>講者 <span style="font-size:20px;font-weight:100%;">{{ $speaker->name }}</span></br>
                       <span style="font-size:18px;">{{ $speaker-> topic }}</span>
                     </center>
                     <a href="{{ url('/speakers') }}">返回</a>
                 </div>
-                <div class="panel-body" >
+                <div class="panel-body" style="height:800px; ">
                   <div id="speaker-background" style = "background-image: url('{{ $speaker -> tphoto}}');">
                       <div id="feeling-form">
                           <center>
@@ -20,7 +20,7 @@
                               <div id="page1" class="col-xs-6" style="background-color:white;padding:5px;border-right:2px solid black;font-weight:bolder;">回饋</div>
                               <div id="page2" class="col-xs-6" style="background-color:white;padding:5px;color:#AAAAAA;">關於</div>
                           </div>
-                          </center>
+
 
                           <div id="page2-content">
                              <div style="padding:10px;text-align:center;font-size:16px;">{{ $speaker -> description}}</div>
@@ -30,6 +30,7 @@
                               <div style="margin:10px;">
                                 <h4>此分享我得到了:</h4>
                               </div>
+                            </center>
 
                               <form role="form" method="POST" action=" {{ url('/speaker', $speaker->id) }} ">
                                 {!! csrf_field() !!}
@@ -114,8 +115,7 @@
                                        </div>
                                      </div>
                                  </div>
-
-                                  <center>
+                                   <center>
                                     <div class="form-group">
                                       <div class="col-xs-12" style="margin-top:20px;margin-down:20px;">
                                         <button class="btn btn-danger" type="submit" >送出</button>
@@ -124,14 +124,16 @@
                                   </center>
                                   <br />
                               </form>
-                        </div>
+
                       </div>
                   </div>
 
                 </div>
+
             </div>
         </div>
     </div>
+  </div>
 </div>
 
 @endsection

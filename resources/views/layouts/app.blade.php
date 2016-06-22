@@ -36,10 +36,13 @@
         #feeling-form {
           width: 100%;
           height: 50%;
-          background-color: rgba(255, 255, 255, 0.8);
+          background-color: white;
           position: absolute;
           bottom: 0;
           left: 0;
+        }
+        .col-xs-4{
+          padding-left:35px;
         }
     </style>
 </head>

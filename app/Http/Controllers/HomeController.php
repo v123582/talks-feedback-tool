@@ -24,15 +24,15 @@ class HomeController extends Controller
             'email'     => Input::get('email'),
             'serialNumber'  => Input::get('serialNumber'),
             'isFbLogin'  => Input::get('isFbLogin'),
-            'FbEmail'  => Input::get('FbEmail'),  
+            'FbEmail'  => Input::get('FbEmail'),
             'FbName'  => Input::get('FbName'),
-            'FbserialNumber'  => Input::get('FbserialNumber')          
+            'FbserialNumber'  => Input::get('FbserialNumber')
         );
 
         $isFbLogin = $userdata['isFbLogin'];
-        $FbEmail = $userdata['FbEmail']; 
-        $FbName = $userdata['FbName']; 
-        $FbserialNumber = (string)$userdata['FbserialNumber']; 
+        $FbEmail = $userdata['FbEmail'];
+        $FbName = $userdata['FbName'];
+        $FbserialNumber = (string)$userdata['FbserialNumber'];
         $userWithFaceBook = false;
         $userWithEmail = false;
         $userWithSerialNumber = false;
@@ -61,14 +61,11 @@ class HomeController extends Controller
             $userWithEmail = isset($userWithEmail);
             $userWithSerialNumber = isset($userWithSerialNumber);
 
-            if($userWithEmail)
-                $user = $userWithEmail;
+            if( $userdata['email'] != '')
+                $user = User::where('email', $userdata['email'])->first();
         }
 
         $isLogin = $userWithEmail || $userWithSerialNumber || $userWithFaceBook;
-
-
-
 
         // attempt to do the login
         if ($isLogin && $user && Auth::loginUsingId($user['id'])) {
