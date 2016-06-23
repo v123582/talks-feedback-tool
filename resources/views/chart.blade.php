@@ -67,6 +67,14 @@ var chartData = <?php echo $votes; ?>;  //頁面初始化
 <center>
 <div class="row">
   <div class="col-md-12">
+    <img src="../images/cake.png"
+    style="position: absolute;
+    width: 260px;
+    top: 56%;
+    left: 50%;
+    z-index: 10;
+    margin-left: -123px;
+    margin-top: -10px;">
     <div id="chartdiv" style="font-size:250%;"></div>
   </div>
 </div>
