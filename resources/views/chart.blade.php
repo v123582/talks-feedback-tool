@@ -70,7 +70,7 @@ var chartData = <?php echo $votes; ?>;  //頁面初始化
     <img src="../images/cake.png"
     style="position: absolute;
     width: 260px;
-    top: 56%;
+    top: 53%;
     left: 50%;
     z-index: 10;
     margin-left: -123px;

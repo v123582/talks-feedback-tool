@@ -22,7 +22,7 @@
         {{$vote->result}}
         @if($vote->result=="愛")
   			   <img src="images/img/red.png">
-           <p style="color:white;font-size:20px;">愛</p>
+           
         @elseif($vote->result=="信心")
 			     <img src="images/img/orange.png">
         @elseif($vote->result=="領導力")
