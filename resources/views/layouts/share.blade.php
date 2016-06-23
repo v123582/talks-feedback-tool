@@ -54,18 +54,7 @@
     </style>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-            <div class="navbar-header" >
-
-                  <a class="navbar-brand" href="{{ url('/') }}">
-                      <img src="../images/title.png"  width="50%" >
-                  </a>
-
-            </div>
-
-        </div>
-    </nav>
+    
 
     @yield('content')
 
