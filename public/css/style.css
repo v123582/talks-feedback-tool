@@ -1,0 +1,254 @@
+/*reset*/
+h1, h2, h3, h4, h5, p {
+  margin: 0;
+  padding: 0; }
+
+br {
+  display: block;
+  margin: 0 0 5px; }
+
+ol, ul {
+  margin: 0;
+  padding: 0; }
+
+li {
+  list-style: none; }
+
+body > img {
+  display: none; }
+
+body {
+  margin: 0; }
+
+img {
+  border: none;
+  padding: 0;
+  margin: 0; }
+
+a, a:active, a:visited, a:hover {
+  outline: none;
+  text-decoration: none;
+  background-color: none;
+  display: block;
+  -webkit-tap-highlight-color: transparent; }
+
+table, tr, td {
+  padding: 0;
+  border-spacing: 0; }
+#b1{
+  position: absolute;
+  bottom: 15%;
+  left:20px;
+  font-size:18px;
+  padding:5px;
+  border-radius:3px;
+}
+
+#b1:hover{
+    background-color: white;
+    cursor:pointer;
+}
+
+#b2{
+  position: absolute;
+  bottom: 15%;
+  right:20px;
+  font-size:18px;
+  padding:5px;
+  border-radius:3px;
+}
+
+#b2:hover{
+    background-color: white;
+    cursor:pointer;
+}
+
+
+
+/*reset end */
+@keyframes bg {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes hand {
+  0% {
+    transform: scale(0.5);
+    opacity: 0; }
+  0% {
+    transform: scale(0.5);
+    opacity: 1; } }
+@keyframes d1 {
+  0% {
+    transform: translate(80%, -230%) scale(0) rotate(0); }
+  10% {
+    transform: translate(80%, -230%) scale(0) rotate(0); }
+  20% {
+    transform: translate(0%, 0%) scale(1) rotate(360deg); }
+  100% {
+    transform: translate(0%, 0%) scale(1) rotate(360deg); } }
+@keyframes d1 {
+  0% {
+    transform: translate(80%, -230%) scale(0) rotate(0); }
+  10% {
+    transform: translate(80%, -230%) scale(0) rotate(0); }
+  20% {
+    transform: translate(0%, 0%) scale(1) rotate(360deg); }
+  100% {
+    transform: translate(0%, 0%) scale(1) rotate(360deg); } }
+@keyframes d2 {
+  0% {
+    transform: translate(-80%, -230%) scale(0) rotate(0); }
+  15% {
+    transform: translate(-80%, -230%) scale(0) rotate(0); }
+  25% {
+    transform: translate(0%, 0%) scale(1) rotate(360deg); }
+  100% {
+    transform: translate(0%, 0%) scale(1) rotate(360deg); } }
+@keyframes d3 {
+  0% {
+    transform: translate(-80%, -230%) scale(0) rotate(0); }
+  20% {
+    transform: translate(-80%, -230%) scale(0) rotate(0); }
+  30% {
+    transform: translate(0%, 0%) scale(1) rotate(360deg); }
+  100% {
+    transform: translate(0%, 0%) scale(1) rotate(360deg); } }
+@keyframes d4 {
+  0% {
+    transform: translate(80%, -230%) scale(0) rotate(0); }
+  25% {
+    transform: translate(80%, -230%) scale(0) rotate(0); }
+  35% {
+    transform: translate(0%, 0%) scale(1) rotate(360deg); }
+  100% {
+    transform: translate(0%, 0%) scale(1) rotate(360deg); } }
+@keyframes d5 {
+  0% {
+    transform: translate(80%, -230%) scale(0) rotate(0); }
+  30% {
+    transform: translate(80%, -230%) scale(0) rotate(0); }
+  40% {
+    transform: translate(0%, 0%) scale(1) rotate(360deg); }
+  100% {
+    transform: translate(0%, 0%) scale(1) rotate(360deg); } }
+@keyframes d6 {
+  0% {
+    transform: translate(-80%, -230%) scale(0) rotate(0); }
+  35% {
+    transform: translate(-80%, -230%) scale(0) rotate(0); }
+  45% {
+    transform: translate(0%, 0%) scale(1) rotate(360deg); }
+  100% {
+    transform: translate(0%, 0%) scale(1) rotate(360deg); } }
+@keyframes d7 {
+  0% {
+    transform: translate(80%, -230%) scale(0) rotate(0); }
+  40% {
+    transform: translate(80%, -230%) scale(0) rotate(0); }
+  50% {
+    transform: translate(0%, 0%) scale(1) rotate(360deg); }
+  100% {
+    transform: translate(0%, 0%) scale(1) rotate(360deg); } }
+@keyframes d8 {
+  0% {
+    transform: translate(-50%, -230%) scale(0) rotate(0); }
+  45% {
+    transform: translate(-50%, -230%) scale(0) rotate(0); }
+  55% {
+    transform: translate(0%, 0%) scale(1) rotate(360deg); }
+  100% {
+    transform: translate(0%, 0%) scale(1) rotate(360deg); } }
+@keyframes d9 {
+  0% {
+    transform: translate(40%, -230%) scale(0) rotate(0); }
+  50% {
+    transform: translate(40%, -230%) scale(0) rotate(0); }
+  60% {
+    transform: translate(0%, 0%) scale(1) rotate(360deg); }
+  100% {
+    transform: translate(0%, 0%) scale(1) rotate(360deg); } }
+html {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  box-sizing: border-box; }
+  html body {
+    position: relative; }
+    html body .main {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden; }
+      html body .main .bg {
+        position: absolute;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        background-image: url(../images/img/star_night.png);
+        top: 0;
+        left: 0;
+        background-size: cover;
+        animation: bg 2s 1; }
+      html body .main .hand {
+        position: relative;
+        width: 300px;
+        top: 42%;
+        left: 50%;
+        margin-left: -150px;
+        opacity: 1;
+        animation: hand 2s 1; }
+      html body .main .pour {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        opacity: 0.6;
+        width: 205px;
+        margin-top: -330px;
+        margin-left: -10px; }
+      html body .main .diamond {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0; }
+        html body .main .diamond img {
+          position: absolute;
+          top: 42%;
+          left: 48%;
+          width: 50px;
+          margin-top: 45px; }
+        html body .main .diamond :nth-child(1) {
+          margin-left: -72px;
+          animation: d1 10s 1; }
+        html body .main .diamond :nth-child(2) {
+          margin-top: 55px;
+          animation: d2 10s 1; }
+        html body .main .diamond :nth-child(3) {
+          margin-left: 34px;
+          margin-top: 40px;
+          animation: d3 10s 1; }
+        html body .main .diamond :nth-child(4) {
+          margin-left: -40px;
+          animation: d4 10s 1; }
+        html body .main .diamond :nth-child(5) {
+          margin-left: -84px;
+          margin-top: 75px;
+          animation: d5 10s 1; }
+        html body .main .diamond :nth-child(6) {
+          margin-left: 38px;
+          margin-top: 72px;
+          animation: d6 10s 1; }
+        html body .main .diamond :nth-child(7) {
+          margin-top: 97px;
+          margin-left: -70px;
+          animation: d7 10s 1; }
+        html body .main .diamond :nth-child(8) {
+          margin-top: 90px;
+          animation: d8 10s 1; }
+        html body .main .diamond :nth-child(9) {
+          margin-top: 120px;
+          margin-left: -37px;
+          animation: d9 10s 1; }
+
+/*# sourceMappingURL=style.css.map */
