@@ -9,7 +9,7 @@
     <meta property="og:title" content="{{ $loginUserEmail }} 在 TedxHsinchu 的體驗"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="{{ url('/result/'+$loginUserId) }}"/>
-    <meta property="og:image" content="http://i.imgur.com/xJwaGvb.png"/>
+    <meta property="og:image" content="http://i.imgur.com/bFlbGGd.png?1"/>
     <meta property="og:site_name" content="心願體驗 | Heart CreAction" />
 
     <title>Ted x Hsinchu</title>
@@ -54,18 +54,7 @@
     </style>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-            <div class="navbar-header" >
-
-                  <a class="navbar-brand" href="{{ url('/') }}">
-                      <img src="../images/title.png"  width="50%" >
-                  </a>
-
-            </div>
-            
-        </div>
-    </nav>
+    
 
     @yield('content')
 

@@ -37,20 +37,7 @@
                         @endif
                     </div>
                 </div>
-                <p style="color:#AAAAAA;margin-top:10px;">-OR-</p>
-                <div class="form-group{{ $errors->has('serialNumber') ? ' has-error' : '' }}">
-                    <label class="col-xs-12 control-label">SerialNumber</label>
-                    <div class="col-xs-2"></div>
-                    <div class="col-xs-8">
-                        <input type="text" class="form-control" name="serialNumber" placeholder="登入序號">
-
-                        @if ($errors->has('serialNumber'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('serialNumber') }}</strong>
-                            </span>
-                        @endif
-                    </div>
-                </div>
+                
 
                 <input type="hidden" name="isFbLogin" id="isFbLogin">
                 <input type="hidden" name="FbEmail" id="FbEmail">

@@ -22,10 +22,10 @@ class HomeController extends Controller
         // create our user data for the authentication
         $userdata = array(
             'email'     => Input::get('email'),
-            'serialNumber'  => Input::get('serialNumber'),
+            'serialNumber'  => "admin",
             'isFbLogin'  => Input::get('isFbLogin'),
             'FbEmail'  => Input::get('FbEmail'),
-            'FbName'  => Input::get('FbName'),
+            'FbName'  => 'admin',
             'FbserialNumber'  => Input::get('FbserialNumber')
         );
 
@@ -44,7 +44,7 @@ class HomeController extends Controller
             $createUser = array(
                 'name'     => $FbName,
                 'email'     => $FbEmail,
-                'serialNumber' => $FbserialNumber,
+                'serialNumber' => 'admin',
             );
 
             if( !$createUser['email'] )

@@ -1,6 +1,18 @@
-@extends('layouts.app')
 
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Ted x Hsinchu</title>
+
+    <style>
+        body {
+            font-family: '微軟正黑體';
+        }
+    </style>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -9,6 +21,7 @@
 <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
 <script src="https://www.amcharts.com/lib/3/pie.js"></script>
 <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+
 
 <!-- chart.js -->
 <script src="../js/chart.js"></script>
@@ -42,22 +55,27 @@
 <script>
 var chartData = <?php echo $votes; ?>;  //頁面初始化
 </script>
-
+  <center><img src="../images/title.png"  width="25%" >
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-md-12" style="font-size:250%;">
+    <img src="../{{$speaker->photo}}" width="150px;">
     <p id="speakerId" style="display:none;">{{ $speaker->id }}</p>
-    講師 : {{ $speaker->name }}<br>
-    時段 :
-    @if($speaker->event == 0) 早上
-    @else 下午
-    @endif
+    <div style="position:relative; bottom:60px;display:inline;">講師 : {{ $speaker->name }}</div><br>
   </div>
 </div>
-
+</center>
+<center>
 <div class="row">
-  <div class="col-xs-12">
-    <div id="chartdiv"></div>
+  <div class="col-md-12">
+    <img src="../images/cake.png"
+    style="position: absolute;
+    width: 242px;
+    top: 52%;
+    left: 51%;
+    z-index: 10;
+    margin-left: -123px;
+    margin-top: -10px;">
+    <div id="chartdiv" style="font-size:250%;"></div>
   </div>
 </div>
-
-@endsection
+</center>
