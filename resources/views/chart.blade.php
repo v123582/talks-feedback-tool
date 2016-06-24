@@ -69,9 +69,9 @@ var chartData = <?php echo $votes; ?>;  //頁面初始化
   <div class="col-md-12">
     <img src="../images/cake.png"
     style="position: absolute;
-    width: 260px;
-    top: 53%;
-    left: 50%;
+    width: 242px;
+    top: 52%;
+    left: 51%;
     z-index: 10;
     margin-left: -123px;
     margin-top: -10px;">

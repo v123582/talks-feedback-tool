@@ -44,5 +44,35 @@ class VotesTableSeeder extends Seeder
           'speaker_id'  => '4',
           'result'    => '3',
         ));
+        Vote::create(array(
+          'user_id'   => '2',
+          'speaker_id'  => '5',
+          'result'    => '3',
+        ));
+        Vote::create(array(
+          'user_id'   => '2',
+          'speaker_id'  => '6',
+          'result'    => '3',
+        ));
+        Vote::create(array(
+          'user_id'   => '2',
+          'speaker_id'  => '7',
+          'result'    => '3',
+        ));
+        Vote::create(array(
+          'user_id'   => '2',
+          'speaker_id'  => '8',
+          'result'    => '3',
+        ));
+        Vote::create(array(
+          'user_id'   => '2',
+          'speaker_id'  => '9',
+          'result'    => '3',
+        ));
+        Vote::create(array(
+          'user_id'   => '2',
+          'speaker_id'  => '10',
+          'result'    => '3',
+        ));
     }
 }

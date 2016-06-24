@@ -13,16 +13,18 @@
 		<div class="bg"></div>
 
     <div style="position: absolute;top:5%;left:5%;color:white;">由這次&nbsp; TED&nbsp;talks &nbsp;我獲得了...</div>
+		<div style="position: absolute;top:10%;left:10%;color:white;">
+			@foreach($votes as $vote)
+				{{$vote->result}}
+			@endforeach
 
+		</div>
 		<img src="images/img/hand.png" class="hand">
 		<img src="images/img/pour.gif" class="pour">
 		<div class="diamond" style="color:white;">
       @foreach($votes as $vote)
-
-        {{$vote->result}}
         @if($vote->result=="愛")
   			   <img src="images/img/red.png">
-           
         @elseif($vote->result=="信心")
 			     <img src="images/img/orange.png">
         @elseif($vote->result=="領導力")
@@ -47,10 +49,10 @@
   <div>
     <center>
       <a href="https://www.facebook.com/sharer.php?u={{ url('result/' . $loginUserId) }}" target="_blank" title="Facebook">
-        <button  id="b1" class="btn btn-primary" onclick="" >分享到ＦＢ</button>
+        <button  id="b1" class="btn btn-primary" onclick="" >SHARE</button>
       </a>
 
-      <button id="b2" class="btn btn-danger" onclick="location.href='/speakers'">回到主畫面</button>
+      <button id="b2" class="btn btn-danger" onclick="location.href='/speakers'">BACK</button>
     </center>
   </div>
   <div style="position: absolute;bottom:0;"><img width="10%" src="images/img/HC.png"></div>

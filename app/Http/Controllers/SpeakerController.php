@@ -49,7 +49,7 @@ class SpeakerController extends Controller
         }
         // $userVotes = array('user_id' => (string)$loginUserId, 'speaker_id' => $speakerId, 'result' => implode(",",$options));
         // Vote::create($userVotes);
-        return redirect()->route("speakers")->with('message', 'Update Successfully: Vote to Speaker '.$speakerId.' with Options '.implode(",",$options));
+        return redirect()->route("speakers")->with('message', '這次的創願成功，謝謝：）');
    }
 
    public function result()
@@ -78,8 +78,8 @@ class SpeakerController extends Controller
 
    public function resultShare($id)
    {
-     
-     
+
+
 
         try {
             $user = User::findOrFail($id);
@@ -101,7 +101,7 @@ class SpeakerController extends Controller
                     case "9": $value->result = '其他'; break;
                 }
             }
-            
+
 
             return view('resultShare', compact('loginUserId', 'loginUserEmail','userVotes','votes'));
         } catch (ModelNotFoundException $ex) {

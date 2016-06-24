@@ -14,11 +14,13 @@ class UserTableSeeder extends Seeder {
   	        'serialNumber' => 'admin',
   	    ));
   	     User::create(array(
-            	'name'     => 'test',
+            'name'     => 'test',
   	        'email'     => 'test@test.com',
   	        'serialNumber' => 'test',
   	    ));
 
+  ## 志工
+  User::create(array('name'=> 'admin','email' => 'v123582@gmail.com','serialNumber' => 'admin',));
   User::create(array('name'=> 'admin','email' => 'rachelni0824@gmail.com','serialNumber' => 'admin',));
   User::create(array('name'=> 'admin','email' => 'frank890417@gmail.com','serialNumber' => 'admin',));
   User::create(array('name'=> 'admin','email' => 'itainan.101@gmail.com','serialNumber' => 'admin',));

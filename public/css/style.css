@@ -37,11 +37,12 @@ a, a:active, a:visited, a:hover {
     left:20px;
     font-size:18px;
     padding:5px;
-    border-radius:3px;
+    border-radius:1px;
+    background-color: white;
   }
 
   #b1:hover{
-      background-color: white;
+      background-color: #DDDDDD;
       cursor:pointer;
   }
 
@@ -51,11 +52,12 @@ a, a:active, a:visited, a:hover {
     right:20px;
     font-size:18px;
     padding:5px;
-    border-radius:3px;
+    border-radius:1px;
+    background-color: white;
   }
 
   #b2:hover{
-      background-color: white;
+      background-color: #DDDDDD;
       cursor:pointer;
   }
 
